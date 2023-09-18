@@ -9,7 +9,7 @@ import user_icon from '../assets/user_icon.png';
 const Sidebar = () => {
   return (
     <>
-        <div className=' bg-gradient-to-b from-blue-500 to-blue-500 rounded-[20px] h-screen lg:flex flex-col hidden'>
+        <div className=' bg-gradient-to-b from-blue-500 to-blue-500 rounded-[20px] h-screen sm:flex flex-col hidden'>
             <h1 className=" px-[50px] py-[60px] text-white text-4xl  font-bold ">Board.</h1>
 
             <div className='flex flex-col px-[50px] justify-center text-white'>
