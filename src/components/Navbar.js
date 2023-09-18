@@ -10,7 +10,7 @@ import menu1 from '../assets/menu1.png';
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   return (
-    <div className='lg:hidden flex cursor-pointer justify-between bg-gradient-to-b from-blue-500 to-blue-500 h-[40px] items-center px-[10px]'>
+    <div className='lg:hidden flex cursor-pointer justify-between bg-gradient-to-b from-blue-500 to-blue-500 w-[full] h-[40px] items-center px-[10px]'>
         <div className='flex'>
             <h1 className='text-white font-bold text-[20px]'>Board</h1>
         </div>
