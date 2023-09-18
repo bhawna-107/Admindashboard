@@ -18,8 +18,8 @@ const Dashboard = () => {
             </div>
 
             <div className='relative flex flex-row items-center'>
-                <img src={searchicon} alt="searchicon" className='absolute left-[150px]  ' />
-                <input type="text" placeholder='Search...' className='bg-[white] px-[15px] w-[180px] rounded-[5px]'/>
+                <img src={searchicon} alt="searchicon" className='absolute lg:left-[150px] left-[80px] ' />
+                <input type="text" placeholder='Search...' className='bg-[white] px-[15px] lg:w-[180px] w-[100px] rounded-[5px]'/>
                 <img src={notification} alt="notificationbar" className='px-[12px]' />
                 {/* {isAuthenticated &&  <div className='w-[45px] h-[45px]  rounded-full m-2 '> <p className='py-2 px-1.5 font-bold text-[white] w-full h-full rounded-full bg-blue-500  text-[10px]'>{user.name}</p> </div>} */}
                 <div className='font-bold text-white rounded-[5px] text-center w-[90px] h-[30px] p-0.5'>
