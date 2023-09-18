@@ -8,14 +8,14 @@ import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div className=" lg:w-full overflow-x-hidden">
+    <div className=" lg:w-full ">
       <Navbar />
-    <div className=" py-[30px] h-[1144px]">
-    <div className="flex lg:gap-[60px] gap-[10px]  py-[30px] lg:px-[30px]">
+    <div className=" py-[30px] h-[1144px] lg:px-0 ">
+    <div className="flex lg:gap-[60px] gap-[10px]  py-[30px] px-[15px] lg:px-[30px]">
       <div className=' lg:w-[280px] w-[0px]'>
       <Sidebar />
       </div>
-      <div className='lg:basis-[82%]  lg:py-[30px] '>
+      <div className=' lg:py-[30px] '>
         <Dashboard />
         <div className='pt-[50px]'>
         <div className=' bg-[white] lg:px-[40px] px-[20px] py-[15px] h-[380px] lg:w-full w-[355px] md:w-[65%] shadow-lg border-2 rounded-[20px]  '>

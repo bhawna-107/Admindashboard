@@ -12,7 +12,7 @@ const Dashboard = () => {
     const { logout } = useAuth0();
   return (
     <div>
-        <div className='flex justify-between items-center'>
+        <div className='flex lg:justify-between justify-center items-center'>
             <div className='text-black text-2xl font-bold'>
                 <h1>Dashboard</h1>
             </div>
