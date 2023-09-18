@@ -42,7 +42,7 @@ const Dashboard = () => {
       <img src={rewards} alt='rewards_icon' />
     </div>
     <p className='text-[11px] font-normal'>Total Rewards</p>
-    <div className='flex flex-row items-center justify-between'>
+    <div className='flex flex-col md:flex-row  md:items-center justify-between'>
       <p className='text-[21px] font-bold'>$2,129,430</p>
       <div className='w-[48px] h-[16px] bg-emerald-50 px-1 rounded-[34px]'>
         <p className='text-[10px] text-green-500 font-semibold'>+2.35%</p>
@@ -55,7 +55,7 @@ const Dashboard = () => {
       <img src={transactions} alt='rewards_icon' />
     </div>
     <p className='text-[11px] font-normal'>Total Transactions</p>
-    <div className='flex flex-row items-center justify-between'>
+    <div className='flex flex-col md:flex-row  md:items-center justify-between'>
       <p className='text-[21px] font-bold'>1520</p>
       <div className='w-[48px] h-[16px] bg-emerald-50 px-1 rounded-[34px]'>
         <p className='text-[10px] text-green-500 font-semibold'>+1.7%</p>
@@ -85,7 +85,7 @@ const Dashboard = () => {
       <img src={users} alt='rewards_icon' />
     </div>
     <p className='text-[11px] font-normal'>Total Users</p>
-    <div className='flex flex-row items-center justify-between'>
+    <div className='flex flex-col md:flex-row  md:items-center justify-between'>
       <p className='text-[21px] font-bold'>9721</p>
       <div className='w-[48px] h-[16px] bg-emerald-50 px-1 rounded-[34px]'>
         <p className='text-[10px] text-green-500 font-semibold'>+4.2%</p>

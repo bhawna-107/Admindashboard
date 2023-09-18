@@ -8,7 +8,7 @@ import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div className=" lg:w-full overflow-hidden">
+    <div className=" lg:w-full overflow-x-hidden">
       <Navbar />
     <div className=" py-[30px] h-[1144px]">
     <div className="flex lg:gap-[60px] gap-[10px]  py-[30px] lg:px-[30px]">
