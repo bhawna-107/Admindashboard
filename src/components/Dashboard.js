@@ -35,7 +35,7 @@ const Dashboard = () => {
         
         
 <div className='flex md:flex-row gap-[17px]  pt-[40px] flex-col w-full'>
-    <div className='flex flex-row gap-[17px] sm:flex-row lg:w-1/2 md:w-1/3 w-full' >
+    <div className='flex flex-row gap-[17px] sm:flex-row lg:w-1/2 md:w-1/3 w-[355px]' >
 
     <div className='shadow text-black w-1/2 h-[120px] bg-white border-[2px] px-[20px] py-[20px] rounded-[20px] hover:shadow-lg transform hover:scale-[105%] transition duration-300 ease-out'>
     <div className='bg-[#7FCC93] w-[31px] h-[31px] rounded-full p-1.5'>
@@ -65,14 +65,14 @@ const Dashboard = () => {
 
 </div>
  
-<div className='flex flex-row gap-[17px] lg:w-1/2 md:w-1/3 '>
+<div className='flex flex-row gap-[17px] lg:w-1/2 md:w-1/3 w-[355px]'>
 
 <div className='shadow text-black w-1/2  h-[120px] bg-white border-[2px] px-[20px] py-[20px] rounded-[20px] hover:shadow-lg transform hover:scale-[105%] transition duration-300 ease-out'>
     <div className='bg-[#EBA3A3] w-[31px] h-[31px] rounded-full p-1.5'>
       <img src={likes} alt='rewards_icon' />
     </div>
     <p className='text-[11px] font-normal'>Total Likes</p>
-    <div className='flex flex-row items-center justify-between'>
+    <div className='flex flex-col md:flex-row  md:items-center justify-between'>
       <p className='text-[21px] font-bold'>9721</p>
       <div className='w-[48px] h-[16px] bg-emerald-50 px-1 rounded-[34px]'>
         <p className='text-[10px] text-green-500 font-semibold'>+1.45%</p>

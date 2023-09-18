@@ -96,7 +96,7 @@ const DoughnutChart = () => {
 
   return (
     <div>
-      <div className='bg-[white] w-[470px] h-[256px] border-2 shadow-lg rounded-[20px] px-[50px] py-[15px]  mt-[50px]'>
+      <div className='bg-[white] lg:w-[470px] w-[355px] h-[256px] border-2 shadow-lg rounded-[20px] px-[50px] py-[15px]  mt-[50px]'>
           <div className='flex flex-row justify-between items-center py-[7px]'>
             <h1 className='font-bold text-black text-lg'>Top Currencies</h1>
             <p className='text-zinc-500 text-sm font-normal'>May-June 2022</p>

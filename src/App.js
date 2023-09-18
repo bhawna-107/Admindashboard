@@ -8,7 +8,7 @@ import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div className="app">
+    <div className="w-[375px] lg:w-full">
       <Navbar />
     <div className=" py-[30px] h-[1144px]">
     <div className="flex lg:gap-[60px] gap-[10px]  py-[30px] lg:px-[30px]">
@@ -18,7 +18,7 @@ function App() {
       <div className='lg:basis-[82%]  lg:py-[30px] '>
         <Dashboard />
         <div className='pt-[50px]'>
-        <div className=' bg-[white] px-[40px] py-[15px] h-[380px] lg:w-full w-[470px] md:w-[65%] shadow-lg border-2 rounded-[20px]  '>
+        <div className=' bg-[white] lg:px-[40px] px-[20px] py-[15px] h-[380px] lg:w-full w-[355px] md:w-[65%] shadow-lg border-2 rounded-[20px]  '>
           <div>
             <h1 className='font-bold text-black text-lg'>Activities</h1>
             <p className='text-zinc-500 text-sm font-normal'>May-June 2022</p>

@@ -10,7 +10,7 @@ const Login = () => {
     const { loginWithRedirect,isAuthenticated,user } = useAuth0();
 
   return (
-    <div className='bg-[white] w-[470px] h-[256px] border-2 shadow-lg rounded-[20px] px-[30px] py-[15px]  mt-[50px]'>
+    <div className='bg-[white] lg:w-[470px] w-[355px] h-[256px] border-2 shadow-lg rounded-[20px] px-[30px] py-[15px]  mt-[50px]'>
 
         {isAuthenticated ? <div className='w-[450px] px-[20px] '>
     {isAuthenticated ?  <h1 className='mt-[20px] font-bold text-xl'>{user.name}</h1> : <h1 className='mt-[20px] font-bold text-xl'>Username</h1>}
