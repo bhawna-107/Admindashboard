@@ -2,42 +2,42 @@ import React from 'react'
 import { useAuth0 } from "@auth0/auth0-react";
 import searchicon from '../assets/Search icon.png';
 import notification from '../assets/bellicon.png';
-import image from '../assets/image 1.png';
 import rewards from '../assets/rewards.png';
 import likes from '../assets/likes.png';
 import users from '../assets/users.png';
 import transactions from '../assets/transactions.png'
 
 const Dashboard = () => {
-    const { loginWithRedirect,isAuthenticated,user } = useAuth0();
+    const {isAuthenticated } = useAuth0();
     const { logout } = useAuth0();
   return (
     <div>
-        <div className='flex justify-between'>
+        <div className='flex justify-between items-center'>
             <div className='text-black text-2xl font-bold'>
                 <h1>Dashboard</h1>
             </div>
 
-            <div className='relative flex flex-row px-[100px]'>
-                <img src={searchicon} alt="searchicon" className='absolute left-[150px] top-2 ' />
+            <div className='relative flex flex-row items-center'>
+                <img src={searchicon} alt="searchicon" className='absolute left-[150px]  ' />
                 <input type="text" placeholder='Search...' className='bg-[white] px-[15px] w-[180px] rounded-[5px]'/>
                 <img src={notification} alt="notificationbar" className='px-[12px]' />
-                <img src={image} alt='loginimage' className='px-[18px] w-full h-full rounded-full ' />
-                {isAuthenticated ? (<button className='' onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+                {/* {isAuthenticated &&  <div className='w-[45px] h-[45px]  rounded-full m-2 '> <p className='py-2 px-1.5 font-bold text-[white] w-full h-full rounded-full bg-blue-500  text-[10px]'>{user.name}</p> </div>} */}
+                <div className='font-bold text-white rounded-[5px] text-center w-[90px] h-[30px] p-0.5'>
+                {isAuthenticated && <div className='bg-[red] rounded-[20px]'>
+                  <button className='' onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
       Log Out
-    </button>): (<button onClick={() => loginWithRedirect()}>Log In</button>)}
-               
-               {isAuthenticated &&  <p>{user.name}</p>}
-            </div>
-        </div>
+    </button></div>}
+    </div>
+    </div>
+    </div>
 
 
         
         
-<div className='flex md:flex-row gap-[17px]  pt-[40px] flex-col'>
-    <div className='flex flex-row gap-[17px] sm:flex-row ' >
+<div className='flex md:flex-row gap-[17px]  pt-[40px] flex-col w-full'>
+    <div className='flex flex-row gap-[17px] sm:flex-row lg:w-1/2 md:w-1/3 w-full' >
 
-    <div className='shadow text-black w-full sm:w-[230px] w-[195px] h-[120px] bg-white border-[2px] px-[20px] py-[20px] rounded-[20px] hover:shadow-lg transform hover:scale-[105%] transition duration-300 ease-out'>
+    <div className='shadow text-black w-1/2 h-[120px] bg-white border-[2px] px-[20px] py-[20px] rounded-[20px] hover:shadow-lg transform hover:scale-[105%] transition duration-300 ease-out'>
     <div className='bg-[#7FCC93] w-[31px] h-[31px] rounded-full p-1.5'>
       <img src={rewards} alt='rewards_icon' />
     </div>
@@ -50,7 +50,7 @@ const Dashboard = () => {
     </div>
   </div>
 
-  <div className='shadow text-black w-full sm:w-[230px]  w-[195px] h-[120px] bg-white border-[2px] px-[20px] py-[20px] rounded-[20px] hover:shadow-lg transform hover:scale-[105%] transition duration-300 ease-out'>
+  <div className='shadow text-black  w-1/2 h-[120px] bg-white border-[2px] px-[20px] py-[20px] rounded-[20px] hover:shadow-lg transform hover:scale-[105%] transition duration-300 ease-out'>
     <div className='bg-[#DDBE85] w-[31px] h-[31px] rounded-full p-1.5'>
       <img src={transactions} alt='rewards_icon' />
     </div>
@@ -65,9 +65,9 @@ const Dashboard = () => {
 
 </div>
  
-<div className='flex flex-row gap-[17px] '>
+<div className='flex flex-row gap-[17px] lg:w-1/2 md:w-1/3 '>
 
-<div className='shadow text-black w-full sm:w-[230px]  w-[195px] h-[120px] bg-white border-[2px] px-[20px] py-[20px] rounded-[20px] hover:shadow-lg transform hover:scale-[105%] transition duration-300 ease-out'>
+<div className='shadow text-black w-1/2  h-[120px] bg-white border-[2px] px-[20px] py-[20px] rounded-[20px] hover:shadow-lg transform hover:scale-[105%] transition duration-300 ease-out'>
     <div className='bg-[#EBA3A3] w-[31px] h-[31px] rounded-full p-1.5'>
       <img src={likes} alt='rewards_icon' />
     </div>
@@ -80,7 +80,7 @@ const Dashboard = () => {
     </div>
   </div>
 
-  <div className='shadow text-black w-full sm:w-[230px]   w-[195px] h-[120px] bg-white border-[2px] px-[20px] py-[20px] rounded-[20px] hover:shadow-lg transform hover:scale-[105%] transition duration-300 ease-out'>
+  <div className='shadow text-black w-1/2    h-[120px] bg-white border-[2px] px-[20px] py-[20px] rounded-[20px] hover:shadow-lg transform hover:scale-[105%] transition duration-300 ease-out'>
     <div className='bg-[#A8B0E5] w-[31px] h-[31px] rounded-full p-1.5'>
       <img src={users} alt='rewards_icon' />
     </div>
@@ -94,9 +94,10 @@ const Dashboard = () => {
   </div>
 </div>
 </div>
+</div>
 
-    </div>
+
   )
 }
 
-export default Dashboard
+export default Dashboard;

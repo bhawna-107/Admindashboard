@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React from 'react'
 import dashboard_icon from '../assets/dashboard_icon.png';
 import schedule_icon from '../assets/schedule_icon.png';
 import setting_icon from '../assets/setting_icon.png';

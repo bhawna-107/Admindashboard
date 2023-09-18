@@ -67,11 +67,11 @@ const DoughnutChart = () => {
         align: 'center',     // Align legend labels to the start
         labels: {
           boxWidth: 40,      // Adjust the width of the legend box
-          padding: 35,       // Add some padding between the legend and chart
+          padding: 25,       // Add some padding between the legend and chart
           usePointStyle: true, // Use point style icons in legend
         },
       },
-      padding: 50,
+      padding: 2,
       maintainAspectRatio: false, // Ensure chart doesn't maintain aspect ratio
     // width: 300, // Fixed width for the chart
     // height: 200, // Fixed height for the chart
@@ -96,15 +96,15 @@ const DoughnutChart = () => {
 
   return (
     <div>
-      <div className='bg-[white] w-[470px] h-[256px] border-2 shadow-lg rounded-[20px] px-[30px] py-[15px]  mt-[50px]'>
-          <div className='flex flex-row justify-between items-center'>
+      <div className='bg-[white] w-[470px] h-[256px] border-2 shadow-lg rounded-[20px] px-[50px] py-[15px]  mt-[50px]'>
+          <div className='flex flex-row justify-between items-center py-[7px]'>
             <h1 className='font-bold text-black text-lg'>Top Currencies</h1>
             <p className='text-zinc-500 text-sm font-normal'>May-June 2022</p>
           </div>
         {Object.keys(chartData).length === 0 ? (
         <p>Loading data...</p>
       ) : (
-        <Doughnut data={chartData} options={options} width={350}  />
+        <Doughnut data={chartData} options={options} />
       )}
     </div>
     </div>

@@ -10,15 +10,15 @@ function App() {
   return (
     <div className="app">
       <Navbar />
-    <div className=" py-[30px] h-[100%]">
-    <div className="flex gap-[60px]  py-[30px] h-[944px] ">
-      <div className=' w-[280px]'>
+    <div className=" py-[30px] h-[1144px]">
+    <div className="flex lg:gap-[60px] gap-[10px]  py-[30px] lg:px-[30px]">
+      <div className=' lg:w-[280px] w-[0px]'>
       <Sidebar />
       </div>
-      <div className='lg:basis-[82%] basis-[100%] py-[30px]'>
+      <div className='lg:basis-[82%]  lg:py-[30px] '>
         <Dashboard />
         <div className='pt-[50px]'>
-        <div className=' bg-[white] px-[40px] py-[15px] h-[380px] lg:w-[975px] w-[470px] md:w-[975px] shadow-lg border-2 rounded-[20px]  '>
+        <div className=' bg-[white] px-[40px] py-[15px] h-[380px] lg:w-full w-[470px] md:w-[65%] shadow-lg border-2 rounded-[20px]  '>
           <div>
             <h1 className='font-bold text-black text-lg'>Activities</h1>
             <p className='text-zinc-500 text-sm font-normal'>May-June 2022</p>
@@ -26,8 +26,8 @@ function App() {
             <BarChart />
         </div>
         </div>
-        <div className='flex flex-col sm:flex-row sm:gap-[250px] md:gap-[250px] '>
-          <div className='w-[260px]'>
+        <div className='flex flex-col  md:flex-row md:gap-[250px] '>
+          <div className='w-[290px] lg:w-[full] '>
           <DoughnutChart />
           </div>
         <Login /> 
