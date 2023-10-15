@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Login from '../components/Login';
 import { Doughnut } from 'react-chartjs-2';
 import {
     Chart as ChartJS,
@@ -95,8 +96,8 @@ const DoughnutChart = () => {
 
 
   return (
-    <div>
-      <div className='bg-[white] lg:w-[470px] w-[355px] h-[256px] border-2 shadow-lg rounded-[20px] px-[50px] py-[15px]  mt-[50px]'>
+    <div className='flex flex-wrap lg:flex-row md:flex-row flex-col w-full justify-between'>
+      <div className='bg-[white]  w-full h-[256px] border-2 shadow-lg rounded-[20px] px-[50px] py-[15px]  mt-[50px]'>
           <div className='flex flex-row justify-between items-center py-[7px]'>
             <h1 className='font-bold text-black text-lg'>Top Currencies</h1>
             <p className='text-zinc-500 text-sm font-normal'>May-June 2022</p>
@@ -107,7 +108,26 @@ const DoughnutChart = () => {
         <Doughnut data={chartData} options={options} />
       )}
     </div>
+    
     </div>
+
+//     <div className='bg-white lg:w-1/2 md:w-1/2 w-full h-[256px] border-2 shadow-lg rounded-[20px] px-[50px] py-[15px] mt-50px flex flex-col lg:flex-row md:flex-row'>
+//   <div className='flex flex-row justify-between items-center py-[7px]'>
+//     <h1 className='font-bold text-black text-lg'>Top Currencies</h1>
+//     <p className='text-zinc-500 text-sm font-normal'>May-June 2022</p>
+//   </div>
+//   <div className='w-full lg:w-1/2 md:w-1/2'>
+//     {Object.keys(chartData).length === 0 ? (
+//       <p>Loading data...</p>
+//     ) : (
+//       <Doughnut data={chartData} options={options} />
+//     )}
+//   </div>
+//   <div className='w-full lg:w-1/2 md:w-1/2'>
+//     <Login />
+//   </div>
+// </div>
+
   );
 };
 

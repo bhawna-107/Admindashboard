@@ -106,7 +106,8 @@ console.log('Data for Dataset 2:', coins2);
     };
   
     return (
-      <div>
+      <div className='flex flex-wrap '>
+      <div className=' lg:w-full w-full border-2 bg-white p-4 mt-6 rounded-[20px] '>
         
       {Object.keys(chartData).length === 0 ? (
         <p>Loading data...</p>
@@ -115,6 +116,7 @@ console.log('Data for Dataset 2:', coins2);
         <Bar data={chartData} options={options} height={300} />
         // </div>
       )}
+    </div>
     </div>
     );
       }

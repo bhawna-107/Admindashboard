@@ -9,7 +9,7 @@ import user_icon from '../assets/user_icon.png';
 const Sidebar = () => {
   return (
     <>
-        <div className=' bg-gradient-to-b from-blue-500 to-blue-500 rounded-[20px] h-screen sm:flex flex-col hidden overflow-hidden'>
+        <div className=' bg-gradient-to-b from-blue-500 to-blue-500 rounded-[20px] h-full sm:flex flex-col hidden overflow-hidden'>
             <h1 className=" px-[50px] py-[60px] text-white text-4xl  font-bold ">Board.</h1>
 
             <div className='flex flex-col px-[50px] justify-center text-white'>
@@ -39,7 +39,7 @@ const Sidebar = () => {
                 </div>
             </div>
 
-            <div className='text-white px-[50px] text-sm py-[80px]  '>
+            <div className='text-white px-[50px] text-sm pt-[280px]  '>
                 <div className='flex flex-col gap-[20px]'>
                     <h2>Help</h2>
                     <h2>Contact Us</h2>

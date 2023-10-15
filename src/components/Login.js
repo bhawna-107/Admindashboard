@@ -1,65 +1,122 @@
-import React from 'react'
-import { useAuth0 } from "@auth0/auth0-react";
+import React, {useState, useEffect} from 'react'
 import whtsapp from '../assets/whtsapp.png';
 import mail from '../assets/Mail.png';
 import insta from '../assets/insta.png';
 import youtube from '../assets/youtube.png';
 import profile from '../assets/profile.png';
+import Modal from './Modal';
+import close from '../assets/close icon.png';
+import { auth } from '../config/firebase'; // Import your Firebase configuration
+import { onAuthStateChanged } from 'firebase/auth';
 
 const Login = () => {
-    const { loginWithRedirect,isAuthenticated,user } = useAuth0();
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [saveDetails, setSaveDetails] = useState(() =>{
+      const savedDetails = localStorage.getItem('saveDetails');
+      return savedDetails ? JSON.parse(savedDetails) : null;
+    });
+    const [currentUser, setCurrentUser] = useState(null);
+
+
+    useEffect(() => {
+      const unsubscribeAuth = onAuthStateChanged(auth, (user) => {
+        if (user) {
+          setCurrentUser(user);
+        } else {
+          setCurrentUser(null);
+        }
+      });
+  
+      return () => {
+        unsubscribeAuth(); // Unsubscribe from auth state changes on component unmount
+      };
+    }, []); // Only run this effect once (on component mount)
+    const handleModalToggle = () => {
+      setIsModalOpen(!isModalOpen);
+    };
+
+    const handleSaveDetails =(details) =>{
+      setSaveDetails(details);
+      localStorage.setItem('saveDetails', JSON.stringify(details));
+
+    }
+
+
 
   return (
-    <div className='bg-[white] lg:w-[470px] w-[355px] h-[256px] border-2 shadow-lg rounded-[20px] px-[30px] py-[15px]  mt-[50px]'>
 
-        {isAuthenticated ? <div className='w-[450px] px-[20px] '>
-    {isAuthenticated ?  <h1 className='mt-[10px] font-bold text-xl'>{user.name}</h1> : <h1 className='mt-[20px] font-bold text-xl'>Username</h1>}
 
-        {/* <h1 className='mt-[20px] font-bold text-xl'></h1> */}
-        <div className='flex flex-col gap-[2px]'>
-        <div className='mt-[30px] flex flex-col md:flex-row gap-[10px] mb-[20px]'>
-            <div className='flex flex-row gap-[10px] '>
-                <div className="bg-green-200 p-1 w-[25px] h-[25px] rounded-full">
-                <img src={whtsapp} alt="whatsapp_icon" />
-                </div>
-                <p className='underline'>+91134567890</p>
-            </div>
+<div className='bg-[white]   h-[256px] border-2 shadow-lg rounded-[20px]   px-[50px] py-[10px] mt-[50px] '>
 
-            <div className='flex flex-row gap-[10px]'>
-                <div className="bg-rose-200 p-1 w-[25px] h-[25px] rounded-full">
-                <img src={insta} alt="insta_icon" />
-                </div>
-                
-                <p className='underline'>user_official</p>
-            </div>
+  
+  
+      
+{currentUser && (
+      isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50 ">
+          <div className="bg-black bg-opacity-50 absolute inset-0" />
+          <div className="w-full lg:w-1/3 md:w-1/2 sm:w-1/2 h-[45%]  shadow-lg rounded-[20px] mt-50px relative">
+          
+            <Modal onClose={() => setIsModalOpen(false)} onSave={handleSaveDetails}/>
+            <button onClick={handleModalToggle}><img className='absolute left-[90%] top-[2.5%] ' src={close} alt='close-icon' /> </button>
+          </div>
         </div>
+      )
+      )}
 
-        <div className='flex flex-col md:flex-row gap-[10px]'>
-            <div className='flex flex-row gap-[10px]'>
-                <div className="bg-violet-200 w-[25px] p-0.5 h-[25px] rounded-full">
-                <img src={mail} alt="mail_icon" />
-                </div>
-                {isAuthenticated ? <p className='underline'>{user.email}</p> :<p className='underline'>user@email.com</p> }
+     {currentUser && saveDetails && (
+        <div className='py-4 flex flex-col justify-center gap-4'>
+          
+          <div className='font-bold text-lg'>
+            {currentUser.displayName}
+          </div>
+          <div className='flex flex-col gap-2'>
+          {saveDetails.Contact && 
+          (<div className='flex gap-2'>
+            <div className='rounded-full w-[25px] h-[25px] bg-green-100 p-1'>
+              <img src={whtsapp} alt="contact" />
             </div>
+              <p className='font-bold'> {saveDetails.Contact}</p>  
+          </div>) }
 
-            <div className='flex flex-row gap-[10px]'>
-                <div className="bg-red-200 p-1  w-[25px] h-[25px] rounded-full">
-                <img src={youtube} alt="youtube_icon" />
-                </div>
-                <p className='underline'>user_official</p>
+          {saveDetails.YoutubeLink && 
+          (<div className='flex gap-2'>
+            <div className='rounded-full w-[25px] h-[25px] bg-red-200 p-1'>
+              <img src={youtube} alt="contact" />
             </div>
+              <p className='font-bold'> {saveDetails.YoutubeLink}</p>  
+          </div>) }
+
+          {saveDetails.InstagramLink && 
+          (<div className='flex gap-2'>
+            <div className='rounded-full w-[25px] h-[25px] bg-pink-200 p-1'>
+              <img src={insta} alt="contact" />
+            </div>
+              <p className='font-bold'> {saveDetails.InstagramLink}</p>  
+          </div>) }
+          </div>
+         
+          <div className='pl-[85%] pb-[12px]'>
+
+          <div className='bg-gray-100   rounded-full curser-pointer  p-2 flex items-center' onClick={handleModalToggle}>
+            {/* <p>Add Details</p> */}
+           
+              <img src={profile} alt="add profile" />
+          </div>
+
+
+          </div>
+          
+          
         </div>
-        </div>
-</div> : <div className='flex flex-col gap-[5px] justify-center items-center py-[60px]'>
-      {!isAuthenticated && <div className=''> 
-    <button onClick={() => loginWithRedirect()}><img src={profile} alt="add_profile" /></button> </div>}
-                               {/* </div> */}
-                
-            {/* </div> */}
-        <h1 className='font-bold text-xl'> Add Profile </h1>
-    </div>}
-    
+      )
+   }
     </div>
+
+    
+   
+    
+   
   )
 }
 
