@@ -10,7 +10,7 @@ import { getFirestore } from  'firebase/firestore';
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyCIKXrH0CRXEem5jwlkj5f37VW0KoY9M58",
-  authDomain: "reactdashboard-107.firebaseapp.com",
+  authDomain: "https://openinapp-dashboard-psi.vercel.app/",
   projectId: "reactdashboard-107",
   storageBucket: "reactdashboard-107.appspot.com",
   messagingSenderId: "894875889932",

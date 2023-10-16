@@ -76,7 +76,7 @@ const Login = () => {
             <div className='rounded-full w-[25px] h-[25px] bg-green-100 p-1'>
               <img src={whtsapp} alt="contact" />
             </div>
-              <p className='font-bold'> {saveDetails.Contact}</p>  
+              <p className='font-normal underline'> {saveDetails.Contact}</p>  
           </div>) }
 
           {saveDetails.YoutubeLink && 
@@ -84,7 +84,7 @@ const Login = () => {
             <div className='rounded-full w-[25px] h-[25px] bg-red-200 p-1'>
               <img src={youtube} alt="contact" />
             </div>
-              <p className='font-bold'> {saveDetails.YoutubeLink}</p>  
+              <p className='font-normal underline'> {saveDetails.YoutubeLink}</p>  
           </div>) }
 
           {saveDetails.InstagramLink && 
@@ -92,7 +92,7 @@ const Login = () => {
             <div className='rounded-full w-[25px] h-[25px] bg-pink-200 p-1'>
               <img src={insta} alt="contact" />
             </div>
-              <p className='font-bold'> {saveDetails.InstagramLink}</p>  
+              <p className='font-normal underline'> {saveDetails.InstagramLink}</p>  
           </div>) }
           </div>
          
@@ -110,6 +110,14 @@ const Login = () => {
           
         </div>
       )
+  //     :
+  //     <div className='flex flex-col items-center py-[60px]'>
+  //     <button onClick={handleModalToggle}>
+  //       <img src={profile} alt="add profile" />
+  //      </button>
+  //      <p className='font-bold text-xl text-zinc-500'>Add Profile</p>
+      
+  //  </div>
    }
     </div>
 
