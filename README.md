@@ -6,7 +6,7 @@ Welcome to the React Admin Dashboard project! This dashboard is designed to prov
 
 Explore the live demo: https://reactdashboard-107.web.app/
 
-![Dashboard Screenshot](./src/assets/girlphoto.jpg)
+![Dashboard Screenshot](./src/assets/girlphoto1.png)
 
 
 ## Features
