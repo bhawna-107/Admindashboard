@@ -8,6 +8,7 @@ import Dashboard from './components/Dashboard';
 // import Navbar from './components/Navbar';
 import LoginPage from './components/LoginPage';
 import Signup from './components/Signup';
+import Pricing from './components/Pricing';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/" element={<Dashboard />} />
           <Route path='/signup' element={<Signup />} />
+          <Route path='/pricing' element={<Pricing />} />
         </Routes>
       </Router>
     </div>

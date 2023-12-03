@@ -16,6 +16,11 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 const DoughnutChart = () => {
   const [chartData, setChartData] = useState({});
+  const [selectedOption, setSelectedOption] = useState('Option 1');
+
+  const handleSelectChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -98,9 +103,18 @@ const DoughnutChart = () => {
   return (
     <div className='flex flex-wrap lg:flex-row md:flex-row flex-col w-full justify-between'>
       <div className='bg-[white]  w-full h-[256px] border-2 shadow-lg rounded-[20px] px-[50px] py-[15px]  mt-[50px]'>
-          <div className='flex flex-row justify-between items-center py-[7px]'>
-            <h1 className='font-bold text-black text-lg'>Top Currencies</h1>
-            <p className='text-zinc-500 text-sm font-normal'>May-June 2022</p>
+          <div className='flex flex-row justify-between items-center py-[7px] border-b-2'>
+            <h1 className='font-bold text-black text-lg '>Top Currencies</h1>
+            <div  className="block appearance-none  bg-white border border-gray-300 hover:border-gray-500 px-2 py-2 rounded shadow leading-tight  focus:border-transparent">
+
+            <select  value={selectedOption} onChange={handleSelectChange}>
+        <option value="Option 1">May 2022</option>
+        <option value="Option 2">June 2023</option>
+        <option value="Option 3">August 2023</option>
+      </select>
+            </div>
+            
+            {/* <p className='text-zinc-500 text-sm font-normal'>May-June 2022</p> */}
           </div>
         {Object.keys(chartData).length === 0 ? (
         <p>Loading data...</p>

@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import notification from '../assets/bellicon.png';
 import searchicon from '../assets/Search icon.png';
 import trending from '../assets/trending.png';
+import girlphoto from '../assets/girlphoto1.png';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../config/firebase';
 
@@ -68,10 +69,10 @@ const Statschart = () => {
     
     <div className='flex flex-wrap flex-col  '>
 
-      <div className='my-5 '> 
+      <div className='mb-5 '> 
         <div className='flex flex-row justify-between gap-4 mb-4'>
           <div>
-            <h1 className='font-bold text-2xl'>DashBoard</h1>
+            <h1 className='font-bold text-3xl text-blue-500'>DashBoard</h1>
           </div>
           <div className='flex lg:gap-3  gap-2 items-center'>
             <div className='relative sm:block hidden'>
@@ -112,13 +113,58 @@ const Statschart = () => {
 
 
  
-<div className="flex flex-wrap justify-between gap-4 "> 
+<div className="flex flex-wrap justify-between md:gap-2 sm:gap-4 gap-10  "> 
+
+{user ? (
+<div className="w-full h-[180px] sm:w-[44%] md:w-[48%] lg:w-[calc(50%-0.5rem)]" >
+  <div className="border-2   text-white rounded-[20px] bg-[#FF638499] p-5 md:p-5 flex flex-col gap-1 transition-transform transform duration-200 ease-in-out hover:scale-105 border-2 shadow-lg">
+          <div className='flex flex-row relative gap-6'>
+          <div >
+          <div className='flex flex-col gap-2 font-semibold lg:text-[20px] md:text-[14px] sm:text-[12.5px] text-[20px] mb-2'>
+          <h2>Hey {user.displayName},</h2>
+          <h2>Download Latest Report</h2>
+          </div>
+          <button className='bg-white text-black  px-4 py-2 rounded-[20px]'>Download</button>
+          
+
+          </div>
+          <img className=" w-[42%] h-[70%] z-4" src={girlphoto} alt="girl sitting"/>
+          
+
+          </div>
+          
+   
+
+  </div>
+  </div>)
+  : (<div className="w-full h-[180px] sm:w-[44%] md:w-[48%] lg:w-[calc(50%-0.5rem)]" >
+  <div className="border-2   text-white rounded-[20px] bg-[#FF638499] p-5 md:p-5 flex flex-col gap-1 transition-transform transform duration-200 ease-in-out hover:scale-105 border-2 shadow-lg">
+          <div className='flex flex-row relative gap-6'>
+          <div >
+          <div className='flex flex-col gap-2 font-semibold lg:text-[20px] md:text-[14px] sm:text-[12.5px] text-[20px] mb-2'>
+          <h2>Hey YourName,</h2>
+          <h2>Download Latest Report</h2>
+          </div>
+          <button className='bg-white text-black  px-4 py-2 rounded-[20px]'>Download</button>
+          
+
+          </div>
+          <img className=" w-[42%] h-[70%] z-4" src={girlphoto} alt="girl sitting"/>
+          
+
+          </div>
+          
+   
+
+  </div>
+  </div>) }
+
   
 
-  <div className="md:w-[calc(33.333% - 1rem)] lg:w-[calc(25% - 1rem)] ">
-    <div className="border-2 rounded-[20px] bg-white p-3 md:p-3 flex flex-col gap-1">
+  <div className=" w-[45%] sm:w-[22%] md:w-[24%] lg:w-[calc(25%-0.5rem)]  ">
+    <div className="border-2  rounded-[20px] bg-white  p-3 md:p-3 flex flex-col gap-1 transition-transform transform duration-200 ease-in-out hover:scale-105 border-2 shadow-lg">
       <div className='flex flex-col gap-1'>
-        <div className='bg-green-300 w-[30px] h-[30px] rounded-full p-1.5'>
+        <div className='bg-[#FF9EAA] w-[30px] h-[30px] rounded-full p-1.5'>
         <img className="w-[30px]" src={trending} alt='trending-logo' />
         </div>
           
@@ -126,7 +172,7 @@ const Statschart = () => {
       </div>
       
       {statData?.coins?.slice(0, 3).map((coin) => (
-        <div key={coin.symbol} className="flex flex-row lg:gap-20 md:gap-16 sm:gap-10 gap-8">
+        <div key={coin.symbol} className="flex flex-row lg:gap-24 md:gap-16 sm:gap-10 gap-8">
           {coin.item.symbol}
           <img className="w-[10%] " src={coin.item.small} alt={`Icon`} />
         </div>
@@ -136,10 +182,10 @@ const Statschart = () => {
 
 
 
-  <div className=" md:w-[calc(33.333% - 1rem)] lg:w-[calc(25% - 1rem)] ">
-    <div className="border-2 rounded-[20px] bg-white p-3 md:p-3 flex flex-col gap-1">
+  <div className=" w-[45%] sm:w-[22%] md:w-[24%] lg:w-[calc(25%-0.5rem)] ">
+    <div className="border-2  rounded-[20px] bg-white p-3 md:p-3 flex flex-col gap-1 transition-transform transform duration-200 ease-in-out hover:scale-105 border-2 shadow-lg">
       <div className='flex flex-col gap-1'>
-        <div className='bg-green-300 w-[30px] h-[30px] rounded-full p-1.5'>
+        <div className='bg-[#FF9EAA] w-[30px] h-[30px] rounded-full p-1.5'>
         <img className="w-[30px]" src={trending} alt='trending-logo' />
         </div>
           
@@ -147,51 +193,53 @@ const Statschart = () => {
       </div>
       
       {statData?.coins?.slice(0, 3).map((coin) => (
-        <div key={coin.symbol} className="flex flex-row lg:gap-20 md:gap-16 sm:gap-10 gap-8">
+        <div key={coin.symbol} className="flex flex-row lg:gap-24 md:gap-16 sm:gap-10 gap-8">
           {coin.item.symbol}
           <img className="w-[10%] " src={coin.item.small} alt={`Icon`} />
         </div>
       ))}
     </div>
   </div>
+{/* 
+  <div className=" w-[45%] sm:w-[22%]  md:w-[24%] lg:w-[calc(25%-0.5rem)] ">
+    <div className="border-2 border-b-blue-500 rounded-[20px] bg-white p-3 md:p-3 flex flex-col gap-1 transition-transform transform duration-200 ease-in-out hover:scale-105 border-2 shadow-lg">
+      <div className='flex flex-col gap-1'>
+        <div className='bg-[#FF9EAA] w-[30px] h-[30px] rounded-full p-1.5'>
+        <img className="w-[30px]" src={trending} alt='trending-logo' />
+        </div>
+          
+          <h1 className="font-bold text-sm">Trending Coins</h1>
+      </div>
+      
+      {statData?.coins?.slice(0, 3).map((coin) => (
+        <div key={coin.symbol} className="flex flex-row lg:gap-24 md:gap-16 sm:gap-10 gap-8">
+          {coin.item.symbol}
+          <img className="w-[10%] " src={coin.item.small} alt={`Icon`} />
+        </div>
+      ))}
+    </div>
+  </div>
+  <div className="  w-[45%] sm:w-[22%] md:w-[24%] lg:w-[calc(25%-0.5rem)] ">
+    <div className="border-2  border-b-blue-500 rounded-[20px] bg-white p-3 md:p-3 flex flex-col gap-1 transition-transform transform duration-200 ease-in-out hover:scale-105 border-2 shadow-lg">
+      <div className='flex flex-col gap-1'>
+        <div className='bg-[#FF9EAA] w-[30px] h-[30px] rounded-full p-1.5'>
+        <img className="w-[30px]" src={trending} alt='trending-logo' />
+        </div>
+          
+          <h1 className="font-bold text-sm">Trending Coins</h1>
+      </div>
+      
+      {statData?.coins?.slice(0, 3).map((coin) => (
+        <div key={coin.symbol} className="flex flex-row lg:gap-24 md:gap-16 sm:gap-10 gap-8">
+          {coin.item.symbol}
+          <img className="w-[10%] " src={coin.item.small} alt={`Icon`} />
+        </div>
+      ))}
+    </div>
+  </div> */}
 
-  <div className=" md:w-[calc(33.333% - 1rem)] lg:w-[calc(25% - 1rem)] ">
-    <div className="border-2 rounded-[20px] bg-white p-3 md:p-3 flex flex-col gap-1">
-      <div className='flex flex-col gap-1'>
-        <div className='bg-green-300 w-[30px] h-[30px] rounded-full p-1.5'>
-        <img className="w-[30px]" src={trending} alt='trending-logo' />
-        </div>
-          
-          <h1 className="font-bold text-sm">Trending Coins</h1>
-      </div>
-      
-      {statData?.coins?.slice(0, 3).map((coin) => (
-        <div key={coin.symbol} className="flex flex-row lg:gap-20 md:gap-16 sm:gap-10 gap-8">
-          {coin.item.symbol}
-          <img className="w-[10%] " src={coin.item.small} alt={`Icon`} />
-        </div>
-      ))}
-    </div>
-  </div>
-  <div className=" md:w-[calc(33.333% - 1rem)] lg:w-[calc(25% - 1rem)] ">
-    <div className="border-2 rounded-[20px] bg-white p-3 md:p-3 flex flex-col gap-1">
-      <div className='flex flex-col gap-1'>
-        <div className='bg-green-300 w-[30px] h-[30px] rounded-full p-1.5'>
-        <img className="w-[30px]" src={trending} alt='trending-logo' />
-        </div>
-          
-          <h1 className="font-bold text-sm">Trending Coins</h1>
-      </div>
-      
-      {statData?.coins?.slice(0, 3).map((coin) => (
-        <div key={coin.symbol} className="flex flex-row lg:gap-20 md:gap-16 sm:gap-10 gap-8">
-          {coin.item.symbol}
-          <img className="w-[10%] " src={coin.item.small} alt={`Icon`} />
-        </div>
-      ))}
-    </div>
-  </div>
-
+{/* 3e45954e353b4a51b7a5e6b20b0554ef */}
+ 
   
 
 </div>
