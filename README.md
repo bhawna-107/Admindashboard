@@ -6,6 +6,9 @@ Welcome to the React Admin Dashboard project! This dashboard is designed to prov
 
 Explore the live demo: https://reactdashboard-107.web.app/
 
+![Dashboard Screenshot](./src/assets/girlphoto.jpg)
+
+
 ## Features
 Authentication: Firebase Authentication for user sign-up, sign-in, and user management.
 
