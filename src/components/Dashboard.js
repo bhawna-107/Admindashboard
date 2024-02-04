@@ -16,13 +16,13 @@ const Dashboard = () => {
    <Navbar />
    <div className='w-full h-full flex flex-row lg:p-12 md:p-10 p-8 box-border lg:gap-12'>
       
-  <div className='lg:w-1/5 lg:block hidden  w-0'>
+  <div className='lg:w-1/5 lg:block hidden  w-0 h-700'>
     <Sidebar />
   </div>
   <div className='lg:w-4/5 w-full'>
     <div className=' '>
       <Statschart />
-    <div className='flex md:flex-row flex-col w-full gap-2 h-auto'>
+    <div className='flex md:flex-row flex-col w-full gap-3 h-auto'>
 
         <div className='lg:w-2/3  w-full'>
           <BarChart />

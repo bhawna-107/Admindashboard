@@ -74,7 +74,7 @@ const Login = () => {
   return (
 
 
-<div className='bg-[white]   h-[256px] border-2 shadow-lg rounded-[20px]   px-[50px] py-[10px] mt-[50px] '>
+<div className='bg-[white]   h-[256px] border-2 shadow-lg rounded-[20px]   px-[50px] py-[10px] mt-[30px] '>
 
   
   
@@ -83,7 +83,7 @@ const Login = () => {
       isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50 ">
           <div className="bg-black bg-opacity-50 absolute inset-0" />
-          <div className="w-full lg:w-1/3 md:w-1/2 sm:w-1/2 h-[45%]  shadow-lg rounded-[20px] mt-50px relative">
+          <div className="w-full lg:w-1/3 md:w-1/2 sm:w-1/2 h-[45%]  shadow-lg rounded-[20px] mt-[70px] relative">
           
             <Modal onClose={() => setIsModalOpen(false)} onSave={handleSaveDetails}/>
             <button onClick={handleModalToggle}><img className='absolute left-[90%] top-[2.5%] ' src={close} alt='close-icon' /> </button>

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Stats = () => {
   return (
-    <div className='bg-white w-full rounded-[20px] shadow-lg flex flex-col m-6 p-10 gap-8 border-2'>
+    <div className='bg-white w-full rounded-[20px] shadow-lg flex flex-col mx-1 my-6 md:p-10 p-8 gap-8 border-2'>
         <h1 className='font-bold text-xl'>Weekely Stats</h1>
 
         <div className='flex flex-col gap-4'>

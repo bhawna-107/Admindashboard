@@ -83,7 +83,7 @@ const BarChart = () => {
 
   return (
     <div className='flex flex-wrap'>
-      <div className='lg:w-full w-full border-2 bg-white p-4 mt-6 rounded-[20px]  shadow-lg'>
+      <div className='lg:w-full w-full border-2 bg-white p-4 mt-6 rounded-[20px]  shadow-lg z-1'>
         {Object.keys(chartData).length === 0 ? (
           <p>Loading data...</p>
         ) : (

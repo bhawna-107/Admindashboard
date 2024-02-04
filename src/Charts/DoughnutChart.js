@@ -102,7 +102,7 @@ const DoughnutChart = () => {
 
   return (
     <div className='flex flex-wrap lg:flex-row md:flex-row flex-col w-full justify-between'>
-      <div className='bg-[white]  w-full h-[256px] border-2 shadow-lg rounded-[20px] px-[50px] py-[15px]  mt-[50px]'>
+      <div className='bg-[white]  w-full h-[256px] border-2 shadow-lg rounded-[20px] px-[50px] py-[15px]  mt-[30px]'>
           <div className='flex flex-row justify-between items-center py-[7px] border-b-2'>
             <h1 className='font-bold text-black text-lg '>Top Currencies</h1>
             <div  className="block appearance-none  bg-white border border-gray-300 hover:border-gray-500 px-2 py-2 rounded shadow leading-tight  focus:border-transparent">
